@@ -7,6 +7,11 @@ its rank over the 72-hour scoring window with fading momentum, and spread
 probability over places with a Gaussian kernel whose width grows with the
 horizon. Nothing is hardcoded from the kit: places, output name and the
 history itself are all read from /input. Deterministic, stdlib only.
+
+Design note (2026-11-12): a sharper variant was tried and backtested
+worse (-3.66 vs -3.58), so the wider kernel below is kept on purpose.
+The chart's membership churns slowly but its order shuffles fast, so a
+diffuse forecast stays better calibrated than an overconfident one.
 """
 import json
 import math
